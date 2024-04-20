@@ -1,74 +1,40 @@
-// ignore_for_file: unused_import
-
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:talent_bridge/Jobs/jobs_screen.dart';
-import 'package:talent_bridge/Search/search_companies.dart';
-import 'package:talent_bridge/user_state.dart';
 
-import 'LoginPage/login_screen.dart';
-import 'SignupPage/signup_screen.dart';
+import 'Screens/home_screen.dart';
 
-void main(){
-  WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp();
-  runApp(MyApp());
+void main() {
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-
-
-  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+  const MyApp({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: _initialization,
-      builder: (context, snapshot)
-      {
-        // if(snapshot.connectionState == ConnectionState.waiting)
-        // {
-        //   return const MaterialApp(
-        //     home: Scaffold(
-        //       body: Center(
-        //         child: Text('Talent Bridge is being initialized',
-        //         style: TextStyle(
-        //           color:Colors.cyan,
-        //           fontSize: 30,
-        //           fontWeight: FontWeight.bold,
-        //         ),
-        //         ),
-        //       ),
-        //     ),
-        //   );
-        // }
-        // else if(snapshot.hasError){
-        //   return const MaterialApp(
-        //     home: Scaffold(
-        //       body: Center(
-        //         child: Text('An Error has been occurred',
-        //           style: TextStyle(
-        //             color:Colors.cyan,
-        //             fontSize: 30,
-        //             fontWeight: FontWeight.bold,
-        //           ),
-        //         ),
-        //       ),
-        //     ),
-        //   );
-        // }
-
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Talent Bridge',
-          theme: ThemeData(
-            scaffoldBackgroundColor: Colors.black,
-            primarySwatch:Colors.blue,
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Talent Bridge',
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white54,
+        primarySwatch: Colors.blue,
+        useMaterial3: true,
+        appBarTheme: const AppBarTheme(
+          color: Colors.blue,
+          titleTextStyle: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+            fontWeight: FontWeight
+                .bold,
           ),
-          home: JobScreen(),
-        );
-      }
+        ),
+      ),
+      home: const HomeScreen(),
+      routes: {
+        '/home': (context) => const HomeScreen(),
+      },
     );
+
   }
+
 }
