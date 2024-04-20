@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "874404138057",
+    "project_id": "talentbridge-769b3",
+    "storage_bucket": "talentbridge-769b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874404138057:android:39830ec47b3d7308ef0398",
+        "android_client_info": {
+          "package_name": "com.example.talent_bridge"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEXvjYo_kyfFiWjr1yrS-u4HCtVmEjEFo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
